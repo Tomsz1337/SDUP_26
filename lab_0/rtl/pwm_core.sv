@@ -5,32 +5,30 @@ module pwm_core #(
     input   logic clk,
 
     input   logic [3:0] channel_id,   
-    input   logic [3:0] duty,
-    input   logic       align_mode,
-    input   logic       polarity_mode,
+    input   logic [3:0] duty,         
+    input   logic       align_mode,   
+    input   logic       polarity_mode, 
 
-    output  logic pwm_out
+    output  logic [3:0] pwm_out      
 );
 
-localparam  PERIOD = CLK_FREQ / PWM_FREQ;
-localparam  CNT_W = $clog2(PERIOD);
+localparam PERIOD = CLK_FREQ / PWM_FREQ;
+localparam CNT_W  = $clog2(PERIOD);
 
-logic [CNT_W-1:0] counter;
-logic dir;
+logic [CNT_W-1:0] counter = 0;
+logic dir = 0;
+
 
 always_ff @(posedge clk) begin
-    
     if(!align_mode) begin
         counter <= (counter == PERIOD-1) ? 0 : counter + 1;
-    end
-    else begin
+    end else begin
         if(!dir) begin
+            counter <= counter + 1;
             if(counter == PERIOD-1) dir <= 1;
-            else counter <= counter + 1;
-        end
-        else begin
+        end else begin
+            counter <= counter - 1;
             if(counter == 0) dir <= 0;
-            else counter <= counter - 1;
         end
     end
 end
@@ -38,10 +36,23 @@ end
 logic [CNT_W-1:0] threshold;
 assign threshold = (PERIOD * duty) / 10;
 
+
 logic pwm_raw;
-assign pwm_raw = (counter < threshold);
-logic pwm_pol;
-assign pwm_pol = active_low ? ~pwm_raw : pwm_raw;
-assign pwm_out = {4{pwm_pol}} & channel_id;
+
+always_comb begin
+    pwm_raw = 0;
+
+    if(channel_id != 0) begin
+        if(align_mode) begin
+            if(!dir) pwm_raw = (counter < threshold);
+            else      pwm_raw = (counter > (PERIOD - threshold));
+        end else begin
+            pwm_raw = (counter < threshold);
+        end
+    end
+end
+
+assign pwm_out = polarity_mode ? (pwm_raw ? channel_id : 0)
+                               : (~pwm_raw ? channel_id : 0);
 
 endmodule

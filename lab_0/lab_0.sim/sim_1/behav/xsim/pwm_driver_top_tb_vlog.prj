@@ -1,0 +1,13 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  \
+"../../../../rtl/debouncer.sv" \
+"../../../../rtl/pwm_cfg.sv" \
+"../../../../rtl/pwm_core.sv" \
+"../../../../pwm_driver_top.sv" \
+"../../../../pwm_driver_top_tb.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
