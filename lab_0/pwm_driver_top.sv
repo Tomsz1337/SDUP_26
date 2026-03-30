@@ -5,6 +5,7 @@
 module pwm_driver_top (
 	// inputs
 	input logic CLK,
+	input logic RST_N,
 	input logic [5 : 0] SW,
     input logic [3 : 0] BTN,
 	// outputs
@@ -19,6 +20,7 @@ debouncer #(
 	.DEBOUNCE_TIME_MS (0)
 ) u_debouncer (
 	.clk	(CLK),
+	.rst_n  (RST_N),
 	.btn_in	(BTN),
 	.btn_out(btn_db)
 );
@@ -30,6 +32,7 @@ logic [3:0] duty;
 
 pwm_cfg u_pwm_cfg (
 	.clk(CLK),
+	.rst_n  (RST_N),
 	.btn(btn_db),
 	.sw(SW),
 	.selected_channel(channel_id),
@@ -40,9 +43,10 @@ pwm_cfg u_pwm_cfg (
 
 pwm_core #(
 	.CLK_FREQ (100_000_000),
-	.PWM_FREQ (10_000_000)
+	.PWM_FREQ (50_000_000)
 ) u_pwm_core (
 	.clk(CLK),
+	.rst_n  (RST_N),
 	.channel_id(channel_id),
 	.duty(duty),
 	.align_mode(align_mode),

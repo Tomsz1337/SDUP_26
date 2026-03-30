@@ -1,3 +1,1 @@
 Breakpoint File Version 1.0
-27 true C:/Users/tomas/Documents/Vivado/SDUP_26/lab_0/pwm_driver_top_tb.sv
-25 true C:/Users/tomas/Documents/Vivado/SDUP_26/lab_0/pwm_driver_top_tb.sv

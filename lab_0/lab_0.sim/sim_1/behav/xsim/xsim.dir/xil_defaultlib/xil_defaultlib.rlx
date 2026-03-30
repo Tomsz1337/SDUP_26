@@ -3,8 +3,8 @@
 Dec  7 2018
 00:33:28
 C:/Users/tomas/Documents/Vivado/SDUP_26/lab_0/lab_0.sim/sim_1/behav/xsim/glbl.v,1544155481,verilog,,,,glbl,,,,,,,,
-C:/Users/tomas/Documents/Vivado/SDUP_26/lab_0/pwm_driver_top.sv,1773953497,systemVerilog,,C:/Users/tomas/Documents/Vivado/SDUP_26/lab_0/pwm_driver_top_tb.sv,,pwm_driver_top,,,,,,,,
-C:/Users/tomas/Documents/Vivado/SDUP_26/lab_0/pwm_driver_top_tb.sv,1773953721,systemVerilog,,,,pwm_driver_top_tb,,,,,,,,
-C:/Users/tomas/Documents/Vivado/SDUP_26/lab_0/rtl/debouncer.sv,1773953145,systemVerilog,,C:/Users/tomas/Documents/Vivado/SDUP_26/lab_0/rtl/pwm_cfg.sv,,debouncer,,,,,,,,
-C:/Users/tomas/Documents/Vivado/SDUP_26/lab_0/rtl/pwm_cfg.sv,1773949952,systemVerilog,,C:/Users/tomas/Documents/Vivado/SDUP_26/lab_0/rtl/pwm_core.sv,,pwm_cfg,,,,,,,,
-C:/Users/tomas/Documents/Vivado/SDUP_26/lab_0/rtl/pwm_core.sv,1773950084,systemVerilog,,C:/Users/tomas/Documents/Vivado/SDUP_26/lab_0/pwm_driver_top.sv,,pwm_core,,,,,,,,
+C:/Users/tomas/Documents/Vivado/SDUP_26/lab_0/pwm_driver_top.sv,1774890432,systemVerilog,,C:/Users/tomas/Documents/Vivado/SDUP_26/lab_0/pwm_driver_top_tb.sv,,pwm_driver_top,,,,,,,,
+C:/Users/tomas/Documents/Vivado/SDUP_26/lab_0/pwm_driver_top_tb.sv,1774898344,systemVerilog,,,,pwm_driver_top_tb,,,,,,,,
+C:/Users/tomas/Documents/Vivado/SDUP_26/lab_0/rtl/debouncer.sv,1774896516,systemVerilog,,C:/Users/tomas/Documents/Vivado/SDUP_26/lab_0/rtl/pwm_cfg.sv,,debouncer,,,,,,,,
+C:/Users/tomas/Documents/Vivado/SDUP_26/lab_0/rtl/pwm_cfg.sv,1774890990,systemVerilog,,C:/Users/tomas/Documents/Vivado/SDUP_26/lab_0/rtl/pwm_core.sv,,pwm_cfg,,,,,,,,
+C:/Users/tomas/Documents/Vivado/SDUP_26/lab_0/rtl/pwm_core.sv,1774894563,systemVerilog,,C:/Users/tomas/Documents/Vivado/SDUP_26/lab_0/pwm_driver_top.sv,,pwm_core,,,,,,,,

@@ -1,7 +1,19 @@
 Vivado Simulator 2018.3
 Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 79e1abb0aef9456a8059306e16c0a869 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot pwm_driver_top_tb_behav xil_defaultlib.pwm_driver_top_tb xil_defaultlib.glbl -log elaborate.log 
+Running: C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 79e1abb0aef9456a8059306e16c0a869 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot pwm_driver_top_tb_behav xil_defaultlib.pwm_driver_top_tb xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
-INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "C:/Users/tomas/Documents/Vivado/SDUP_26/lab_0/rtl/debouncer.sv" Line 1. Module debouncer(DEBOUNCE_TIME_MS=0) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/tomas/Documents/Vivado/SDUP_26/lab_0/rtl/pwm_cfg.sv" Line 1. Module pwm_cfg doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/tomas/Documents/Vivado/SDUP_26/lab_0/rtl/pwm_core.sv" Line 1. Module pwm_core(PWM_FREQ=50000000) doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.debouncer(DEBOUNCE_TIME_MS=0)
+Compiling module xil_defaultlib.pwm_cfg
+Compiling module xil_defaultlib.pwm_core(PWM_FREQ=50000000)
+Compiling module xil_defaultlib.pwm_driver_top
+Compiling module xil_defaultlib.pwm_driver_top_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot pwm_driver_top_tb_behav
